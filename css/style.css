@@ -1,0 +1,191 @@
+body {
+  font-family: Inter, system-ui, sans-serif;
+  color: #0f1b3d;
+  background: #f7f9fd;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #dbe2ef;
+  background: #fff;
+  border-radius: 0.65rem;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.9rem;
+  outline: none;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+.input::placeholder {
+  color: #8a94ab;
+}
+.input:focus {
+  border-color: #0b5fff;
+  box-shadow: 0 0 0 3px rgba(11, 95, 255, 0.12);
+}
+.input.has-icon {
+  padding-left: 2.5rem;
+}
+textarea.input {
+  resize: vertical;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border-radius: 0.65rem;
+  padding: 0.6rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+  white-space: nowrap;
+}
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.btn-primary {
+  background: #0b5fff;
+  color: #fff;
+}
+.btn-primary:hover:not(:disabled) {
+  background: #0848c7;
+}
+.btn-outline {
+  background: #fff;
+  color: #0b5fff;
+  border-color: #0b5fff;
+}
+.btn-outline:hover:not(:disabled) {
+  background: #eef4ff;
+}
+.btn-danger {
+  background: #fff;
+  color: #dc2626;
+  border-color: #f2a3a3;
+}
+.btn-danger:hover:not(:disabled) {
+  background: #fef2f2;
+}
+.btn-ghost {
+  background: #fff;
+  color: #0f1b3d;
+  border-color: #dbe2ef;
+}
+.btn-ghost:hover:not(:disabled) {
+  background: #f3f6fb;
+}
+.btn-sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.82rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e8edf6;
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px rgba(15, 27, 61, 0.04);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  background: #eef2f9;
+  color: #44506b;
+}
+.chip-green {
+  background: #d3f5e1;
+  color: #15803d;
+}
+.chip-blue {
+  background: #dbe8ff;
+  color: #0848c7;
+}
+.chip-amber {
+  background: #fef3c7;
+  color: #92400e;
+}
+.chip-red {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.chip-gray {
+  background: #eef2f9;
+  color: #44506b;
+}
+
+.choice {
+  border: 1px solid #dbe2ef;
+  background: #fff;
+  border-radius: 0.65rem;
+  padding: 0.55rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+}
+.choice:hover {
+  border-color: #0b5fff;
+}
+.choice.active {
+  border-color: #0b5fff;
+  background: #eef4ff;
+  color: #0848c7;
+}
+
+.label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+.label .req {
+  color: #dc2626;
+}
+.hint {
+  font-size: 0.78rem;
+  color: #6b7690;
+}
+
+.spin {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #eef2f9 25%, #f7f9fd 50%, #eef2f9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+  border-radius: 0.75rem;
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.auth-art {
+  background: linear-gradient(160deg, #dbe8ff 0%, #eef4ff 45%, #d3f5e1 100%);
+}

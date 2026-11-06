@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Browse – CampusLoop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="topbar"></div>
+
+  <main class="mx-auto max-w-7xl px-4 py-8">
+    <h1 class="text-3xl font-extrabold">Browse Items</h1>
+    <p class="text-gray-600 mt-1" id="result-count">Find what you need from students on your campus.</p>
+
+    <div class="card mt-6 p-4 grid gap-4 md:grid-cols-[1fr_auto_auto_auto] items-end">
+      <div>
+        <label class="label" for="f-q">Search</label>
+        <input id="f-q" class="input" placeholder="Title or description…">
+      </div>
+      <div>
+        <label class="label" for="f-category">Category</label>
+        <select id="f-category" class="input"></select>
+      </div>
+      <div>
+        <label class="label" for="f-type">Available for</label>
+        <select id="f-type" class="input">
+          <option value="">Anything</option>
+          <option value="sell">Buy</option>
+          <option value="exchange">Exchange</option>
+          <option value="lend">Lend</option>
+        </select>
+      </div>
+      <div>
+        <label class="label" for="f-sort">Sort by</label>
+        <select id="f-sort" class="input">
+          <option value="new">Newest first</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="grid" class="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"></div>
+    <div class="text-center mt-8"><button id="more" class="btn btn-ghost hidden">Load more</button></div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pages/browse.js"></script>
+</body>
+</html>

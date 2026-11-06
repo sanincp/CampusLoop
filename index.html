@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CampusLoop – Buy, Sell, Exchange &amp; Lend Within Your Campus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="topbar"></div>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-50 via-white to-leaf-50">
+    <div class="mx-auto max-w-7xl px-4 py-14 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <span class="inline-flex items-center gap-2 chip chip-green !text-xs">
+          <span class="inline-block w-3.5 h-3.5" id="hero-leaf"></span> Same Students. Better Tomorrow.
+        </span>
+        <h1 class="mt-5 text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">
+          Buy. Sell. Exchange. Lend.<br><span class="text-brand-600">Within Your Campus.</span>
+        </h1>
+        <p class="mt-5 text-lg text-gray-600 max-w-lg">A simple and trusted marketplace for students to buy, sell, exchange and lend items within the campus community.</p>
+
+        <form id="hero-search" class="mt-8 flex max-w-xl bg-white rounded-2xl shadow-md border border-line p-1.5">
+          <input name="q" class="flex-1 px-4 py-2.5 outline-none rounded-xl bg-transparent min-w-0" placeholder="Search for books, electronics, furniture…">
+          <button class="btn btn-primary !rounded-xl">Search</button>
+        </form>
+
+        <div id="category-chips" class="mt-6 flex flex-wrap gap-2.5"></div>
+      </div>
+
+      <div class="hidden md:block">
+        <div class="relative rounded-[2rem] bg-gradient-to-br from-brand-100 to-leaf-100 p-10 aspect-[5/4] flex items-center justify-center">
+          <div class="absolute top-6 right-8 text-right -rotate-6 text-brand-700 font-semibold italic text-lg leading-tight">Pre-loved<br>Items<br>New Opportunities</div>
+          <div class="flex flex-col gap-2 w-3/4">
+            <div class="rounded-lg bg-ink text-white font-semibold px-5 py-3 shadow-lg">Data Structures</div>
+            <div class="rounded-lg bg-brand-700 text-white font-semibold px-5 py-3 shadow-lg ml-4">Operating System</div>
+            <div class="rounded-lg bg-brand-500 text-white font-semibold px-5 py-3 shadow-lg ml-8">Computer Networks</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured -->
+  <main class="mx-auto max-w-7xl px-4 py-10">
+    <div class="flex items-end justify-between mb-5">
+      <h2 class="text-2xl font-extrabold">Featured Items</h2>
+      <a href="browse.html" class="text-brand-600 font-semibold text-sm hover:underline">View All →</a>
+    </div>
+    <div id="featured" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"></div>
+
+    <!-- Value strip -->
+    <div class="mt-12 rounded-2xl bg-brand-50 border border-brand-100 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 p-7" id="values"></div>
+  </main>
+
+  <footer class="border-t border-line py-8 text-center text-sm text-gray-500">
+    © <span id="yr"></span> CampusLoop · Reuse. Share. Support.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pages/index.js"></script>
+</body>
+</html>

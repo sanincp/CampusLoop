@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Item – CampusLoop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="topbar"></div>
+  <main class="mx-auto max-w-7xl px-4 py-6" id="page">
+    <div class="skeleton h-96"></div>
+  </main>
+
+  <!-- Request modal -->
+  <div id="modal" class="hidden fixed inset-0 z-50 bg-ink/50 flex items-end sm:items-center justify-center p-4">
+    <form id="req-form" class="card w-full max-w-md p-6 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h2 id="req-title" class="text-xl font-extrabold"></h2>
+          <p id="req-sub" class="text-sm text-gray-500 mt-0.5"></p>
+        </div>
+        <button type="button" id="req-close" class="p-1 rounded-lg hover:bg-gray-100" aria-label="Close"></button>
+      </div>
+      <div id="req-fields" class="mt-5 grid gap-4"></div>
+      <p id="req-error" class="hidden mt-4 text-sm text-red-600"></p>
+      <div class="mt-6 flex gap-3 justify-end">
+        <button type="button" id="req-cancel" class="btn btn-ghost">Cancel</button>
+        <button type="submit" id="req-submit" class="btn btn-primary">Send Request</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pages/item.js"></script>
+</body>
+</html>

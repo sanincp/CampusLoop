@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login – CampusLoop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white">
+  <div id="topbar" class="hidden"></div>
+  <div class="min-h-screen grid lg:grid-cols-2">
+
+    <!-- Art panel -->
+    <aside class="auth-art hidden lg:flex flex-col justify-between p-12 relative overflow-hidden">
+      <div id="logo"></div>
+      <div>
+        <p class="text-xs font-semibold tracking-[.2em] text-gray-500 uppercase">Same Students. Better Tomorrow.</p>
+        <h1 class="mt-4 text-5xl font-extrabold leading-[1.05]">A Smarter<br>Campus<br>Marketplace</h1>
+        <p class="mt-4 text-gray-600 max-w-sm">Buy, sell, exchange and lend items within your campus community.</p>
+      </div>
+      <div class="grid grid-cols-3 gap-4 text-sm font-medium" id="perks"></div>
+    </aside>
+
+    <!-- Form -->
+    <main class="flex items-center justify-center p-6 sm:p-12">
+      <div class="w-full max-w-md">
+        <div class="lg:hidden mb-8" id="logo-m"></div>
+        <h2 class="text-3xl font-extrabold">Welcome Back</h2>
+        <p class="text-gray-600 mt-1">Login to your CampusLoop account</p>
+
+        <form id="login-form" class="mt-8 grid gap-4" novalidate>
+          <div class="relative">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" data-icon="mail"></span>
+            <input id="email" type="email" class="input has-icon" placeholder="University Email" autocomplete="email" required>
+          </div>
+          <div class="relative">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" data-icon="lock"></span>
+            <input id="password" type="password" class="input has-icon pr-11" placeholder="Password" autocomplete="current-password" required>
+            <button type="button" id="toggle-pw" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-ink" aria-label="Show password" data-icon="eye"></button>
+          </div>
+          <div class="text-right -mt-2"><button type="button" id="forgot" class="text-sm font-medium text-brand-600 hover:underline">Forgot Password?</button></div>
+          <p id="msg" class="hidden text-sm rounded-lg px-3 py-2"></p>
+          <button id="login-btn" class="btn btn-primary !py-3">Login <span data-icon="arrow"></span></button>
+        </form>
+
+        <div class="my-6 flex items-center gap-4 text-xs text-gray-500"><span class="flex-1 h-px bg-line"></span>OR<span class="flex-1 h-px bg-line"></span></div>
+
+        <button id="google-btn" class="btn btn-ghost w-full !py-3">
+          <svg class="w-5 h-5" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17.5z"/><path fill="#FBBC05" d="M10.5 28.7A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.2.8-4.7l-7.9-6.1A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.5-5.8c-2.1 1.4-4.8 2.3-8.4 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg>
+          Continue with Google
+        </button>
+
+        <p class="mt-8 text-center text-sm text-gray-600">Don't have an account? <a href="signup.html" id="to-signup" class="font-semibold text-brand-600 hover:underline">Sign Up</a></p>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pages/login.js"></script>
+</body>
+</html>

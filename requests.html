@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Requests Inbox – CampusLoop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="topbar"></div>
+  <div class="mx-auto max-w-[90rem] flex">
+    <aside id="sidebar" class="hidden lg:block w-64 shrink-0 border-r border-line bg-white"></aside>
+
+    <main class="flex-1 min-w-0 p-4 sm:p-8 grid xl:grid-cols-[1fr_300px] gap-6 items-start">
+      <div class="min-w-0">
+        <div class="flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <h1 class="text-3xl font-extrabold">Requests Inbox</h1>
+            <p class="text-gray-600 mt-1" id="subtitle">Manage incoming requests for your items.</p>
+          </div>
+          <div class="inline-flex rounded-xl border border-line bg-white p-1 text-sm font-semibold" id="direction">
+            <button data-dir="received" class="px-4 py-1.5 rounded-lg">Received</button>
+            <button data-dir="sent" class="px-4 py-1.5 rounded-lg">Sent</button>
+          </div>
+        </div>
+
+        <div id="tabs" class="mt-6 flex flex-wrap border-b border-line"></div>
+        <div id="list" class="mt-6 grid gap-4"></div>
+      </div>
+
+      <aside class="grid gap-5 xl:mt-1">
+        <section class="card p-5">
+          <h2 class="font-bold flex items-center gap-2" id="filter-title"></h2>
+          <div class="mt-4 grid gap-4">
+            <div><label class="label" for="f-status">Status</label>
+              <select id="f-status" class="input">
+                <option value="">All</option><option value="pending">Pending</option>
+                <option value="accepted">Accepted</option><option value="rejected">Rejected</option><option value="cancelled">Cancelled</option>
+              </select></div>
+            <div><label class="label" for="f-type">Request Type</label>
+              <select id="f-type" class="input">
+                <option value="">All</option><option value="buy">Buy</option>
+                <option value="exchange">Exchange</option><option value="lend">Lending</option>
+              </select></div>
+            <div><label class="label" for="f-sort">Sort By</label>
+              <select id="f-sort" class="input"><option value="new">Newest First</option><option value="old">Oldest First</option></select></div>
+          </div>
+        </section>
+
+        <section class="rounded-2xl bg-brand-50 p-5">
+          <h2 class="font-bold text-brand-700 flex items-center gap-2" id="how-title"></h2>
+          <ol class="mt-3 grid gap-2 text-sm text-gray-700 list-decimal pl-5 marker:font-bold marker:text-brand-600">
+            <li>Review the request details.</li><li>Check the student's profile.</li>
+            <li>Accept or reject the request.</li><li>After accepting, contact details are shared so you can finalize.</li>
+          </ol>
+        </section>
+
+        <section class="rounded-2xl bg-leaf-50 p-5 flex gap-3">
+          <span class="text-leaf-600 shrink-0" id="leaf-ic"></span>
+          <div><h2 class="font-bold">Build a Sustainable Campus</h2>
+            <p class="text-sm text-gray-600 mt-1">By reusing and sharing items, we reduce waste and help fellow students.</p></div>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pages/requests.js"></script>
+</body>
+</html>

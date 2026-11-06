@@ -1,0 +1,17 @@
+{
+  "name": "campusloop",
+  "version": "2.0.0",
+  "description": "CampusLoop - Peer-to-Peer Student Marketplace",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "student",
+    "marketplace",
+    "campus"
+  ],
+  "author": "",
+  "license": "ISC"
+}
+
