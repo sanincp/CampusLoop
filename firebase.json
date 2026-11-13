@@ -2,6 +2,6 @@
   "hosting": {
     "public": ".",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**", "supabase/**", "README.md"],
-    "cleanUrls": true
+    "cleanUrls": false
   }
 }

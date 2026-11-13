@@ -139,6 +139,6 @@
     }
 
     toast('Your item is live!', 'success');
-    location.href = 'item.html?id=' + data.id;
+    location.href = 'item.html?id=' + data.id + '#' + data.id;
   });
 })();

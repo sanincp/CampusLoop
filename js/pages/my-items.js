@@ -37,10 +37,10 @@
     const types = [t.sell && 'Sell', t.exchange && 'Exchange', t.lend && 'Lend'].filter(Boolean).join(' · ');
     return `
       <article class="card p-4 flex gap-4 flex-wrap sm:flex-nowrap" data-id="${it.id}">
-        <a href="item.html?id=${it.id}" class="w-24 h-24 rounded-lg overflow-hidden bg-gray-100 shrink-0 border border-line">${img}</a>
+        <a href="item.html?id=${it.id}#${it.id}" class="w-24 h-24 rounded-lg overflow-hidden bg-gray-100 shrink-0 border border-line">${img}</a>
         <div class="flex-1 min-w-0">
           <div class="flex items-start gap-2 flex-wrap">
-            <a href="item.html?id=${it.id}" class="font-bold hover:text-brand-600">${esc(it.title)}</a>
+            <a href="item.html?id=${it.id}#${it.id}" class="font-bold hover:text-brand-600">${esc(it.title)}</a>
             <span class="chip ${cls}">${label}</span>
             ${n ? `<a href="requests.html" class="chip chip-red">${n} pending request${n > 1 ? 's' : ''}</a>` : ''}
           </div>

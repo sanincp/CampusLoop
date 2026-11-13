@@ -6,14 +6,18 @@
   const { user } = ctx;
 
   const page = $('#page');
-  const id = new URLSearchParams(location.search).get('id');
+  const id = new URLSearchParams(location.search).get('id') ||
+    (/^[0-9a-f-]{36}$/i.test(location.hash.slice(1)) ? location.hash.slice(1) : null);
 
   function notFound(msg) {
     page.innerHTML = `<div class="card p-12 text-center"><h1 class="text-2xl font-extrabold">Item not found</h1>
       <p class="text-gray-500 mt-2">${esc(msg || 'It may have been removed.')}</p>
       <a href="browse.html" class="btn btn-primary mt-6">Browse items</a></div>`;
   }
-  if (!id) return notFound();
+  if (!id) {
+    // Usually means the local web server rewrote item.html?id=… to /item and dropped the id
+    return notFound('The address is missing the item id. Open the item from the Browse page. If this keeps happening, start the app with "npm start" (see README) and use the new address.');
+  }
 
   const { data: item, error } = await CL.sb
     .from('items')
@@ -51,8 +55,9 @@
 
   function actionButtons() {
     if (isOwner) {
-      return `<div class="flex items-center gap-3 flex-wrap"><span class="chip chip-blue">This is your listing</span>
-        <a href="my-items.html" class="btn btn-ghost btn-sm">Manage in My Items</a></div>`;
+      return `<div class="grid gap-3"><div class="flex items-center gap-3 flex-wrap"><span class="chip chip-blue">This is your listing</span>
+        <a href="my-items.html" class="btn btn-ghost btn-sm">Manage in My Items</a></div>
+        <p class="text-sm text-gray-600 bg-brand-50 border border-brand-100 rounded-xl px-3.5 py-2.5">You can't send a request for your own item. To test Buy / Exchange / Lend, log in with a <strong>different account</strong> (another browser or an incognito window) and open this item.</p></div>`;
     }
     if (item.status !== 'available') {
       return `<span class="chip chip-red capitalize">${esc(item.status)} – no longer available</span>`;
@@ -209,7 +214,7 @@
 
   function openModal(type) {
     if (!user) {
-      location.href = 'login.html?next=' + encodeURIComponent('item.html?id=' + item.id);
+      location.href = 'login.html?next=' + encodeURIComponent('item.html?id=' + item.id + '#' + item.id);
       return;
     }
     reqType = type;

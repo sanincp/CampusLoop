@@ -85,11 +85,11 @@
     return `
       <article class="card p-4 sm:p-5" id="req-${r.id}">
         <div class="flex gap-4">
-          <a href="item.html?id=${esc(it.id)}" class="w-20 h-24 sm:w-24 sm:h-28 rounded-lg overflow-hidden bg-gray-100 shrink-0 border border-line">${img}</a>
+          <a href="item.html?id=${esc(it.id)}#${esc(it.id)}" class="w-20 h-24 sm:w-24 sm:h-28 rounded-lg overflow-hidden bg-gray-100 shrink-0 border border-line">${img}</a>
           <div class="flex-1 min-w-0 grid gap-3">
             <div class="flex items-start justify-between gap-3">
               <div class="min-w-0">
-                <a href="item.html?id=${esc(it.id)}" class="font-bold hover:text-brand-600 block truncate">${esc(it.title || 'Item removed')}</a>
+                <a href="item.html?id=${esc(it.id)}#${esc(it.id)}" class="font-bold hover:text-brand-600 block truncate">${esc(it.title || 'Item removed')}</a>
                 ${detailLine(r)}
               </div>
               <div class="text-right shrink-0 text-xs text-gray-500">

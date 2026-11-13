@@ -198,7 +198,7 @@
       ? `<img src="${esc(it.images[0])}" alt="${esc(it.title)}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">`
       : placeholder(it.category);
     return `
-      <a href="item.html?id=${esc(it.id)}" class="card group overflow-hidden flex flex-col hover:shadow-lg hover:-translate-y-0.5 transition">
+      <a href="item.html?id=${esc(it.id)}#${esc(it.id)}" class="card group overflow-hidden flex flex-col hover:shadow-lg hover:-translate-y-0.5 transition">
         <div class="relative aspect-[4/3] overflow-hidden bg-gray-100">${img}${unavailable}</div>
         <div class="p-3.5 flex flex-col gap-1 flex-1">
           <h3 class="font-semibold text-[15px] leading-snug line-clamp-2">${esc(it.title)}</h3>
